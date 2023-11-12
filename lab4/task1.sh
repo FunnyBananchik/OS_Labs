@@ -1,12 +1,6 @@
 ﻿#!/bin/bash
 
-echo 'Введите название предмета'
-read  SubjectName
-echo 'Введите номер группы'
-read Ngroup
-echo 'Введите искомую оценку'
-read  Score
-grep -h "${Ngroup}" labfiles/$SubjectName/tests/TEST* | grep "${Score}$" > grep.txt
+grep -h "$2" labfiles/$1/tests/TEST* | grep "${3}$" > grep.txt
 declare -A students
 for n in $(cat grep.txt)
 do
@@ -19,7 +13,7 @@ do
 echo $value >> mas.txt
 done
 max=$(sort -r mas.txt | head -1)
-echo "Максимальное кол-во оценок $Score = $max"
+echo "Максимальное кол-во оценок $3 = $max"
 for student in "${!students[@]}"
 do
 #echo ${students[$student]}

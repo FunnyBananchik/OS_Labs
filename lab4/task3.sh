@@ -1,9 +1,6 @@
-#!/bin/bash
-echo 'Введите название предмета'
-read  SubjectName
-echo 'Введите фамилию студента'
-read FIO
-data=$(grep -h "$FIO" labfiles/$SubjectName/*-attendance  | awk -F " " '{print $2}')
+﻿#!/bin/bash
+
+data=$(grep -h "$2" labfiles/$1/*-attendance  | awk -F " " '{print $2}')
 i=0
 echo 'Номера пропущенных занятий'
 while [ $i -lt ${#data} ]

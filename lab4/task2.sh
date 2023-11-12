@@ -1,14 +1,10 @@
-#!/bin/bash
-echo 'Введите название предмета'
-read  SubjectName
-echo 'Введите номер группы'
-read Ngroup
+﻿#!/bin/bash
 for i in {1..4}
 do
 unset students
 declare -A students
 echo Test-$i
-grep  "${Ngroup}" labfiles/$SubjectName/tests/TEST-$i | grep "2$" > grep.txt
+grep  "$2" labfiles/$1/tests/TEST-$i | grep "2$" > grep.txt
 for n in $(cat grep.txt)
 do
 p=$(echo $n | awk -F ";" '{print $2}')
