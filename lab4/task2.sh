@@ -1,20 +1,20 @@
 ﻿#!/bin/bash
 for i in {1..4}
 do
-unset students
-declare -A students
-echo Test-$i
-grep  "$2" labfiles/$1/tests/TEST-$i | grep "2$" > grep.txt
-for n in $(cat grep.txt)
+grep "$2" labfiles/$1/tests/TEST-$i | grep 2$ | awk -F ";" '{print $2}' | uniq > grep$i.txt
+done
+cat grep*.txt | sort | uniq > grep.txt
+for student in $(cat grep.txt)
 do
-p=$(echo $n | awk -F ";" '{print $2}')
-students[$p]=$(grep -c "$p" grep.txt)
+	str="${student}"
+	for i in {1..4}
+	do
+		count=$(grep -c ${student} grep$i.txt)
+		if ((count != 0))
+		then
+			str="${str} $i"
+		fi
+	done
+	echo "${str}"
 done
-for key in "${!students[@]}"
-do
-echo $key >> vivod.txt
-done
-cat vivod.txt | sort
-echo '------------------------------------------------------'
-rm -f grep.txt vivod.txt
-done
+rm -rf grep*.txt

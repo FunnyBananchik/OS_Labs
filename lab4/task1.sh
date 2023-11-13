@@ -19,7 +19,8 @@ do
 #echo ${students[$student]}
 if ((${students[$student]} == max))
 then 
-echo $student
+echo $student >> res.txt
 fi
 done
-rm -f grep.txt mas.txt 
+cat res.txt | sort
+rm -f grep.txt mas.txt res.txt

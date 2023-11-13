@@ -22,7 +22,6 @@ done
 
 function Prov_Ngroup(){
 unset result1
-echo "fgdgdfgdfh"
 while [ -z $result1 ]
 do
 echo 'Введите номер группы'
