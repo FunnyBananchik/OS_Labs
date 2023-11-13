@@ -18,10 +18,10 @@ elif [ $kol -gt 1 ]
 then
 echo -n ", $((i+1))"
 fi
-elif [ $kol -eq 0 ] && [ $i -eq 17 ]
+elif [ $kol -eq 0 ] && [ $i -eq $((${#data}-1)) ]
 then
 echo 'Нет пропущенных занятий'
 fi
 ((i++))
 done
-echo ' '
+echo ''
