@@ -8,7 +8,8 @@ while [ $resalt1 -ne 1 ]
 do
 echo 'Введите название предмета'
 read SubjectName
-if [ $SubjectName == 'Пивоварение' ] || [ $SubjectName == 'Криптозоология' ] 
+p=$(find . -type d -name "$SubjectName")
+if [ ! -z $p ] 
 then
 resalt1=1
 else
