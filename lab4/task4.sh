@@ -10,7 +10,7 @@ n=$(grep -h -c . res.txt)
 i=0
 while [ $i -lt $n ]
 do
-echo "$((i+1)). $(tail -$((n-i)) res.txt | head -1)"
+echo -e "$((i+1)). \t $(tail -$((n-i)) res.txt | head -1)"
 ((i++))
 done
 rm -f grep.txt res.txt
