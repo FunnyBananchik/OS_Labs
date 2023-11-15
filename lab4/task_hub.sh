@@ -25,7 +25,7 @@ function Prov_Ngroup(){
 unset result1
 while [ -z $result1 ]
 do
-echo 'Введите номер группы'
+echo 'Введите номер группы в формате "A-**-**"'
 read Ngroup
 for file in labfiles/$SubjectName/tests/TEST-*
 do

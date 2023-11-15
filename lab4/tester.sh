@@ -1,6 +1,6 @@
-cd tests
-bash task1_test.sh
-bash task2_test.sh
-bash task3_test.sh
-bash task4_test.sh
-cd ..
+#!/bin/bash
+
+./task1_test.sh
+./task2_test.sh
+./task3_test.sh
+./task4_test.sh

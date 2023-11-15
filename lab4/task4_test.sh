@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo --------------------------------------------------------------------------------------------*task4_tests
 echo ----------------------------------------------*test1
 diff <(bash task4.sh A-06-20) <(echo -e "1.	NazhmetdinovMA\n2.	ChernyshovDM\n3.	KrivosheevAV\n4.	TretyakovAlO\n5.	DereberiaTM\n6.	ZinchenkoSK\n7.	BespalovML\n8.	BoldyrevIN\n9.	DavydovAlD\n10.	RybakovArV") -s
