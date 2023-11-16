@@ -2,7 +2,7 @@
 
 echo --------------------------------------------------------------------------------------------*task4_tests
 echo ----------------------------------------------*test1
-diff <(bash task4.sh A-06-20) <(echo -e "1.	NazhmetdinovMA\n2.	ChernyshovDM\n3.	KrivosheevAV\n4.	TretyakovAlO\n5.	DereberiaTM\n6.	ZinchenkoSK\n7.	BespalovML\n8.	BoldyrevIN\n9.	DavydovAlD\n10.	RybakovArV") -s
+diff <(bash task4.sh a-06-20) <(echo -e "1.	NazhmetdinovMA\n2.	ChernyshovDM\n3.	KrivosheevAV\n4.	TretyakovAlO\n5.	DereberiaTM\n6.	ZinchenkoSK\n7.	BespalovML\n8.	BoldyrevIN\n9.	DavydovAlD\n10.	RybakovArV") -s
 echo ----------------------------------------------*test2
 diff <(bash task4.sh A-09-20) <(echo -e "1.	MukhamejanovAI\n2.	KharitonovAnA\n3.	TikhonovAVad\n4.	GrebeniukKS\n5.	MikhailovPA\n6.	FurtayevIV\n7.	GumerovaEF\n8.	LabanovaMS\n9.	SukhanovVS\n10.	AslanovAF") -s
 echo ----------------------------------------------*test3

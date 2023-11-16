@@ -1,7 +1,7 @@
 ﻿#!/bin/bash
 
-data=$(grep -h "$2" labfiles/$1/*-attendance  | awk -F " " '{print $2}')
-famil=$(grep -h "$2" labfiles/$1/*-attendance  | awk -F " " '{print $1}')
+data=$(grep -i -h "$2" labfiles/$1/*-attendance  | awk -F " " '{print $2}')
+famil=$(grep -i -h "$2" labfiles/$1/*-attendance  | awk -F " " '{print $1}')
 echo "$famil"
 i=0
 kol=0

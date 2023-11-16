@@ -1,4 +1,5 @@
 ﻿#!/bin/bash
+
 if [ -z $1 ]
 then
 grep -h . labfiles/students/groups/* > grep.txt

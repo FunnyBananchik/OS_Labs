@@ -4,7 +4,7 @@ for i in {1..4}
 do
 if [ ! -z $(find "labfiles/$1/" -name "TEST-$i") ]
 then
-grep "$2" labfiles/$1/tests/TEST-$i | grep 2$ | awk -F ";" '{print $2}' | uniq > grep$i.txt
+grep -i "$2" labfiles/$1/tests/TEST-$i | grep 2$ | awk -F ";" '{print $2}' | uniq > grep$i.txt
 fi
 done
 cat grep*.txt | sort | uniq > grep.txt

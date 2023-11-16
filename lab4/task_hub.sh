@@ -29,13 +29,17 @@ echo 'Введите номер группы в формате "A-**-**"'
 read Ngroup
 for file in labfiles/$SubjectName/tests/TEST-*
 do
-prov=$(grep -h -c "$Ngroup" $file)
+prov=$(grep -i -h -c "$Ngroup" $file)
 if [ $prov -ne 0 ]
 then 
 result1=1
 break
 fi
 done
+if [ $prov -eq $(grep -h -c "" $file) ]
+then
+unset result1
+fi
 if [ -z $result1 ]
 then
 echo 'Неверный номер группы'
@@ -90,7 +94,7 @@ echo 'Введите ФИО студента'
 read FIO
 for filename in labfiles/$SubjectName/*-attendance
 do
-prov=$(grep -h -c "$FIO" $filename)
+prov=$(grep -i -h -c "$FIO" $filename)
 if [ $prov -ne 0 ]
 then 
 flag1=1
@@ -114,6 +118,10 @@ echo 'Введите номер группы или ENTER (если хотите
 read Ngroup
 if [ ! -z $Ngroup ]
 then
+if [ ${Ngroup:0:1} == "a" ]
+then
+Ngroup="A${Ngroup:1}"
+fi
 for file in labfiles/students/groups/*
 do
 if [ $file == "labfiles/students/groups/$Ngroup" ]

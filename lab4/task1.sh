@@ -1,6 +1,6 @@
 ﻿#!/bin/bash
 
-grep -h "$2" labfiles/$1/tests/TEST* | grep "${3}$" > grep.txt
+grep -i -h "$2" labfiles/$1/tests/TEST* | grep "${3}$" > grep.txt
 if [ ! -s grep.txt ]
 then
 echo "Нет людей, получивших оценку $3"
